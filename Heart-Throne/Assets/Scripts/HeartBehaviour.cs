@@ -35,6 +35,7 @@ public class HeartBehaviour : MonoBehaviour
 				if (delay <= 0.0f) {
 					Debug.Log("Back to the player!");
 					arm.SendMessage("CaughtHeart", SendMessageOptions.DontRequireReceiver);
+					this.gameObject.GetComponent<MeshRenderer>().enabled = false;
 					Destroy(this);
 				}
 				break;

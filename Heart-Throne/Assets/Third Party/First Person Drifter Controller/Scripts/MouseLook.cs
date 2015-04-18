@@ -48,14 +48,14 @@ public class MouseLook : MonoBehaviour
 		
 		originalRotation = transform.localRotation;
 	}
- 
+
 	void Update ()
 	{
 		if (axes == RotationAxes.MouseX)
 		{			
 			rotAverageX = 0f;
- 
-			rotationX += Input.GetAxis("Mouse X") * sensitivityX * Time.timeScale;
+
+			rotationX += Input.GetAxis("Horizontal") * sensitivityX * Time.timeScale;
  
 			rotArrayX.Add(rotationX);
  
