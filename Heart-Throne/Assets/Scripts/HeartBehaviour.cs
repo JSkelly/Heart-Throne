@@ -18,6 +18,11 @@ public class HeartBehaviour : MonoBehaviour
 		delay -= Time.deltaTime;
 	}
 
+	public void ReloadLevel()
+	{
+		Application.LoadLevel(Application.loadedLevelName);
+	}
+
 	void OnTriggerEnter(Collider other)
 	{
 		Rigidbody rb = this.GetComponent<Rigidbody>();
@@ -25,7 +30,7 @@ public class HeartBehaviour : MonoBehaviour
 		{
 			case "Floor":
 				Debug.Log("Your heart touched the floor!");
-				Application.LoadLevel(Application.loadedLevel);
+				this.gameObject.SendMessage("ReloadLevel");
 				break;
 			case "Wall":
 				Debug.Log("Your heart touched a wall!");
