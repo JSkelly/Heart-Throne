@@ -47,6 +47,9 @@ public class HeartBehaviour : MonoBehaviour
 			case "Bounce":
 				rb.velocity = new Vector3(0, 5, 0);
 				break;
+			case "StreetLight":
+				rb.velocity = new Vector3(10, 2, 0);
+				break;
 			default:
 				break;
 		}
