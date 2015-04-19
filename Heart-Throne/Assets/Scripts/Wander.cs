@@ -7,75 +7,58 @@ using System.Collections;
 [RequireComponent(typeof(CharacterController))]
 public class Wander : MonoBehaviour
 {
-	public float speed = 5;
-	public float directionChangeInterval = 1;
-	public float maxHeadingChange = 45;
+	public Transform[] waypoints;
+	private int current = 0;
+	public float speed = 3.0f;
+	public float pauseTime = 2.0f;
+	private float timer = 0.0f;
+	private bool pause = false;
 
-	CharacterController controller;
-	float heading;
-	Vector3 targetRotation;
-	float time = 1.0f;
-
-	void Awake()
+	// Use this for initialization
+	void Start()
 	{
-		controller = GetComponent<CharacterController>();
 
-		// Set random initial rotation
-		heading = Random.Range(0, 360);
-		transform.eulerAngles = new Vector3(0, heading, 0);
-
-		StartCoroutine(NewHeading());
 	}
 
+	// Update is called once per frame
 	void Update()
 	{
-		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime * directionChangeInterval);
-		var forward = transform.TransformDirection(Vector3.forward);
-		controller.SimpleMove(forward * speed);
+		Move();
+	}
 
-		time -= Time.deltaTime;
-		if (time < 0.0f)
+	void Move()
+	{
+		if (current < waypoints.Length)
 		{
-			RaycastHit hit;
-			if (Physics.Raycast(transform.position, transform.forward, out hit, 5))
+			Vector3 target = waypoints[current].position;
+			Vector3 diff = target - transform.position;
+			Vector3 dir = new Vector3(diff.x, 0, diff.z);
+
+			if (dir.magnitude < 1.0f)
 			{
-				if (hit.transform != this.transform)
+				pause = true;
+				current++;
+			}
+			else
+			{
+				Quaternion lookat = Quaternion.LookRotation(dir);
+				transform.rotation = Quaternion.Slerp(transform.rotation, lookat, Time.deltaTime);
+
+				timer += Time.deltaTime;
+				if (pause && timer > pauseTime)
 				{
-					Debug.Log("hit!");
-					Debug.DrawLine(transform.position, hit.point, Color.white);
-					NewHeadingRoutine(180);
+					timer = 0.0f;
+					pause = false;
+				}
+				else if(!pause)
+				{
+					GetComponent<CharacterController>().Move(transform.forward.normalized * speed * Time.deltaTime);
 				}
 			}
-
-			time = 1.0f;
 		}
-	}
-
-	/// <summary>
-	/// Repeatedly calculates a new direction to move towards.
-	/// Use this instead of MonoBehaviour.InvokeRepeating so that the interval can be changed at runtime.
-	/// </summary>
-	IEnumerator NewHeading()
-	{
-		while (true)
+		else
 		{
-			NewHeadingRoutine();
-			yield return new WaitForSeconds(directionChangeInterval);
+			current = 0;
 		}
-	}
-
-	/// <summary>
-	/// Calculates a new direction to move towards.
-	/// </summary>
-	void NewHeadingRoutine(float maxHeading = 0.0f)
-	{
-		if (maxHeading == 0.0f)
-		{
-			maxHeading = maxHeadingChange;
-		}
-		var floor = Mathf.Clamp(heading - maxHeading, 0, 360);
-		var ceil = Mathf.Clamp(heading + maxHeadingChange, 0, 360);
-		heading = Random.Range(floor, ceil);
-		targetRotation = new Vector3(0, heading, 0);
 	}
 }
