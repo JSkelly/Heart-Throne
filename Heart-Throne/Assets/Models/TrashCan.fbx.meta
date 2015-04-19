@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 55b9d81153161ab44bdcaf809dc2d58c
-timeCreated: 1429377981
+guid: d301d0f5f312a36478232f6bf4b00091
+timeCreated: 1429413640
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,10 +9,9 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
-    6400000: //RootNode
+    4300000: Trash Can.001
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -32,7 +31,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
