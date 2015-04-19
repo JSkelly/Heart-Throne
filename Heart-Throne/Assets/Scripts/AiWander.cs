@@ -5,14 +5,13 @@ using System.Collections;
 /// Creates wandering behaviour for a CharacterController.
 /// </summary>
 [RequireComponent(typeof(CharacterController))]
-public class Wander : MonoBehaviour
+public class AiWander : MonoBehaviour
 {
 	public Transform[] waypoints;
 	private int current = 0;
 	public float speed = 3.0f;
 
-	private float theta = 0.0f;
-	private float timer = 0.25f;
+	private float timer = 0.15f;
 	private float walkBounceAngle = 2.0f;
 
 	// Use this for initialization
