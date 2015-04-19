@@ -154,6 +154,7 @@ ModelImporter:
     4300052: Plane
     4300054: Cube.001
     4300056: Unity Capsule
+    4300058: Cube.007
     6400000: //RootNode
   materials:
     importMaterials: 0
