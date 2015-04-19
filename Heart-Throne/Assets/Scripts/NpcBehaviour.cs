@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class NpcBehaviour : MonoBehaviour {
+	public GameObject bubble;
 
 	// Use this for initialization
 	void Start () {
@@ -11,5 +12,13 @@ public class NpcBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void ShowBubble()
+	{
+		if (bubble != null)
+		{
+			bubble.SendMessage("Show");
+		}
 	}
 }

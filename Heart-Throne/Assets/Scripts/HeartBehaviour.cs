@@ -50,6 +50,11 @@ public class HeartBehaviour : MonoBehaviour
 			case "StreetLight":
 				rb.velocity = new Vector3(10, 2, 0);
 				break;
+			case "NPC":
+				Debug.Log("NPC!");
+				rb.velocity = rb.velocity * -3 / 4;
+				other.SendMessage("ShowBubble");
+				break;
 			default:
 				break;
 		}
