@@ -11,7 +11,8 @@ GameObject:
   - 33: {fileID: 3363744}
   - 23: {fileID: 2371234}
   - 114: {fileID: 11416418}
-  - 65: {fileID: 6580350}
+  - 54: {fileID: 5418598}
+  - 65: {fileID: 6572078}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112786}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: -6.16104412, y: .649555624, z: 12.6653051}
   m_LocalScale: {x: 1.06748772, y: 1.06748772, z: 1.06748772}
   m_Children: []
@@ -62,14 +63,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112786}
   m_Mesh: {fileID: 4300000, guid: aa687ee31418bc3429bd8222af773a40, type: 3}
---- !u!65 &6580350
+--- !u!54 &5418598
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112786}
+  serializedVersion: 2
+  m_Mass: .100000001
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!65 &6572078
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112786}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .403392673, y: .356558353, z: .621066928}
