@@ -1986,6 +1986,14 @@ Prefab:
       propertyPath: m_Center.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11458734, guid: 5000a6d525416a040b200b87beb02032, type: 2}
+      propertyPath: pauseTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458734, guid: 5000a6d525416a040b200b87beb02032, type: 2}
+      propertyPath: speed
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5000a6d525416a040b200b87beb02032, type: 2}
   m_IsPrefabParent: 0
@@ -9684,7 +9692,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 439106, guid: 7864b9222b0460f439fa8edbb2ffed0f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.38999987
       objectReference: {fileID: 0}
     - target: {fileID: 439106, guid: 7864b9222b0460f439fa8edbb2ffed0f, type: 2}
       propertyPath: m_LocalPosition.y
