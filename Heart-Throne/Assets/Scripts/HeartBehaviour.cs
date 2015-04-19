@@ -4,12 +4,14 @@ using System.Collections;
 public class HeartBehaviour : MonoBehaviour
 {
 	float delay;
+	Vector3 rotateAxis;
 	public GameObject arm;
 
 	// Use this for initialization
 	void Start()
 	{
 		delay = 0.5f;
+		rotateAxis = new Vector3(Random.value, Random.value, Random.value);
 	}
 
 	// Update is called once per frame
@@ -25,6 +27,8 @@ public class HeartBehaviour : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
+		transform.Rotate(rotateAxis, 30.0f);
+
 		Rigidbody rb = this.GetComponent<Rigidbody>();
 		switch (other.gameObject.tag)
 		{
