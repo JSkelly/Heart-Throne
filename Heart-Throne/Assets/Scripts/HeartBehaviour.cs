@@ -10,7 +10,7 @@ public class HeartBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		delay = 0.5f;
+		delay = 0.1f;
 		rotateAxis = new Vector3(Random.value, Random.value, Random.value);
 	}
 
