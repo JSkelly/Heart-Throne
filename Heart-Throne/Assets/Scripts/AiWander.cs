@@ -11,8 +11,8 @@ public class AiWander : MonoBehaviour
 	private int current = 0;
 	public float speed = 3.0f;
 
-	private float timer = 0.15f;
-	private float walkBounceAngle = 2.0f;
+	private float timer = 0.3f;
+	private float walkBounceAngle = 1.0f;
 
 	// Use this for initialization
 	void Start()

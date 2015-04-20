@@ -19,6 +19,7 @@ public class NpcBehaviour : MonoBehaviour {
 		if (bubble != null)
 		{
 			bubble.SendMessage("Show");
+			GetComponent<AudioSource>().Play();
 		}
 	}
 }
