@@ -24,6 +24,11 @@ public class ThrowHeartBehaviour : MonoBehaviour {
 
 			heartCount--;
 		}
+
+		// Quits the player when the user hits escape
+		if (Input.GetKey ("escape")) {
+			Application.Quit();
+		}
 	}
 
 	public void CaughtHeart()
