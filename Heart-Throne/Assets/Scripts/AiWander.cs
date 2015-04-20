@@ -12,7 +12,7 @@ public class AiWander : MonoBehaviour
 	public float speed = 3.0f;
 
 	private float timer = 0.3f;
-	private float walkBounceAngle = 1.0f;
+	public float walkBounceAngle = 1.0f;
 
 	// Use this for initialization
 	void Start()
@@ -54,7 +54,7 @@ public class AiWander : MonoBehaviour
 						walkBounceAngle *= -1;
 						timer = 0.0f;
 					}
-					npc.transform.Rotate(new Vector3(0, 1, 0), walkBounceAngle);
+					npc.transform.Rotate(new Vector3(0, 1, 0), walkBounceAngle * Time.deltaTime);
 				}
 			}
 		}

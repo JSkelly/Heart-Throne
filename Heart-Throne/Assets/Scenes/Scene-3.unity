@@ -3722,7 +3722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd221fae866a0a44f9ac45ab910a46ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 2050982027}
+  playerController: {fileID: 2122483117}
 --- !u!4 &709314857
 Transform:
   m_ObjectHideFlags: 0
@@ -7070,15 +7070,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481348, guid: 77c57b7cdf7f8c94d89d9ace7e91294f, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -.173648223
       objectReference: {fileID: 0}
     - target: {fileID: 481348, guid: 77c57b7cdf7f8c94d89d9ace7e91294f, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: .984807789
       objectReference: {fileID: 0}
     - target: {fileID: 481348, guid: 77c57b7cdf7f8c94d89d9ace7e91294f, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11402550, guid: 77c57b7cdf7f8c94d89d9ace7e91294f, type: 2}
       propertyPath: speed
@@ -7115,6 +7115,10 @@ Prefab:
     - target: {fileID: 148406, guid: 77c57b7cdf7f8c94d89d9ace7e91294f, type: 2}
       propertyPath: m_TagString
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402550, guid: 77c57b7cdf7f8c94d89d9ace7e91294f, type: 2}
+      propertyPath: walkBounceAngle
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77c57b7cdf7f8c94d89d9ace7e91294f, type: 2}
@@ -7783,7 +7787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 158632, guid: bfdb37f7d580b5648bac77e355aad093, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11439106, guid: bfdb37f7d580b5648bac77e355aad093, type: 2}
       propertyPath: heart
@@ -9373,7 +9377,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 152590, guid: 7864b9222b0460f439fa8edbb2ffed0f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11407792, guid: 7864b9222b0460f439fa8edbb2ffed0f, type: 2}
       propertyPath: heart
@@ -11799,6 +11803,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f36a5920057400c4d9ad27acfedee482, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &2122483117
+Transform:
+  m_PrefabParentObject: {fileID: 469030, guid: bfdb37f7d580b5648bac77e355aad093, type: 2}
+  m_PrefabInternal: {fileID: 1379516794}
 --- !u!1 &2124677327
 GameObject:
   m_ObjectHideFlags: 0
